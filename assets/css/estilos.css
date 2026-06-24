@@ -77,11 +77,17 @@ body{
     font-weight: bold;
 }
 #chkBtn{
-    display:none;
+    /*display:none;*/
 }
-.boton{
-    display:none;
-}
+ .boton::before{
+        content: "☰";
+        font-size: 2rem;
+    }
+
+    #chkBtn:checked ~ .boton::before{
+        content: "✖";
+       font-size: 2rem;
+    }
 .logo img{
     height: 70%;
     width: 100%;
@@ -115,7 +121,7 @@ header{
 }
 header ul{
     display:flex;
-    list-style: none;    
+    list-style: none;  
 }
 footer{
     margin-top: 0.5rem;
@@ -149,14 +155,7 @@ footer{
         cursor: pointer;
     }
 
-    .boton::before{
-        content: "☰";
-        font-size: 2rem;
-    }
-
-    #chkBtn:checked + .boton::before{
-        content: "✖";
-    }
+   
 
     nav ul{
         position: absolute;
