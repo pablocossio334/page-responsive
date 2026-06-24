@@ -1,0 +1,259 @@
+/* Estilos generales del body */
+body{
+    width: 98vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+main{
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: rgb(228, 228, 245);
+    border:1px solid rgb(61, 14, 114);
+    display:flex;
+    padding-bottom: 1rem;
+}
+
+/* Sección del perfil */
+.perfil{
+    border-right:1px solid rgb(61, 14, 114);
+    width: 30%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow:auto;
+}
+
+/* Texto del perfil */
+.perfil p{
+    margin-left: 1rem;
+}
+
+/* Imagen del perfil */
+.perfil img{
+    width: 10rem;
+    height: 8rem;
+}
+
+/* Contenedor de proyectos */
+.proyectos{
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: center;
+    display:flex;
+}
+
+/* Imágenes dentro de proyectos */
+.proyectos img{
+    height: auto;
+    width: 80%;
+    border:1px solid rgb(159, 162, 216);
+}
+
+/* Tarjeta de proyecto */
+.card{
+    margin-top: 2rem;
+    margin-left:2rem;
+    border-radius: 5px;
+    background-color: rgb(171, 171, 234);
+    border:1px solid blue;
+    width: 40%;
+    font-size: 10px;
+    height: 15rem;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón de las tarjetas */
+.card button{
+    background-color: blue;
+    color:white;
+    border-radius: 5px;
+}
+
+/* Texto de las tarjetas */
+.card p{
+    height: 20%;
+    overflow: hidden;
+}
+
+/* Contenedor del logo */
+.logo{
+    width: 4rem;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+/* Oculta el checkbox del menú */
+#chkBtn{
+    display:none;
+}
+
+/* Oculta el botón hamburguesa en escritorio */
+.boton{
+    display:none;
+}
+
+/* Imagen del logo */
+.logo img{
+    height: 70%;
+    width: 100%;
+}
+
+/* Texto LOGO */
+.logo span{
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Navegación */
+nav{
+    height: 100%;
+    display:flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+/* Separación entre links */
+nav ul li{
+    margin-left:1rem;
+}
+
+/* Cabecera */
+header{
+    border-radius: 5px;
+    display:flex;
+    background-color: rgba(234, 237, 233);
+    border:2px solid rgb(171, 220, 154);
+    height: 4rem;
+}
+
+/* Lista del menú en escritorio */
+header ul{
+    display:flex;
+    list-style: none;
+}
+
+/* Pie de página */
+footer{
+    margin-top: 0.5rem;
+    background-color: rgb(243, 231, 216);
+}
+
+/* Estilos para celular */
+@media screen and (max-width:535px){
+
+    body{
+        width: 95%;
+    }
+
+    header{
+        height: auto;
+        position: relative;
+        align-items: center;
+    }
+
+    nav{
+        width: auto;
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    /* Muestra el botón hamburguesa */
+    .boton{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    /* Ícono de menú cerrado */
+    .boton::before{
+        content: "☰";
+        font-size: 2rem;
+    }
+
+    /* Ícono de menú abierto */
+    #chkBtn:checked + .boton::before{
+        content: "✖";
+    }
+
+    /* Menú oculto */
+    nav ul{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0.7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        background-color: rgb(217, 235, 210);
+        transition: max-height 0.5s ease;
+    }
+
+    /* Main en columna para celular */
+    main{
+        border:none;
+        flex-direction: column-reverse;
+        background-color: white;
+    }
+
+    .proyectos,
+    .perfil{
+        background-color: rgb(228, 228, 245);
+        border-radius: 5px;
+    }
+
+    .proyectos{
+        width: 100%;
+    }
+
+    .perfil{
+        margin-top: 0.5rem;
+        font-size: 10px;
+        width: 100%;
+    }
+
+    /* Menú desplegado */
+    #chkBtn:checked ~ ul{
+        max-height: 300px;
+    }
+}
+
+/* Estilos para celulares muy pequeños */
+@media screen and (max-width:379px){
+
+    .card{
+        width: 10rem;
+        font-size: 7px;
+        height: 13rem;
+    }
+
+    .card button{
+        background-color: blue;
+        color:white;
+        border-radius: 5px;
+    }
+
+    .card p{
+        height: 20%;
+        overflow: hidden;
+    }
+}
